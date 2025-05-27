@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <!-- AppBar com botão de voltar e título -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="8dp"
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="@color/black"
+                android:contentDescription="Voltar" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Histórico"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <!-- Conteúdo rolável -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:ignore="UseAppTint">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Seção Today -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hoje"
+                android:textSize="12sp"
+                android:textColor="#808080"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Item Today -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp">
+
+                <View
+                    android:id="@+id/viewIconToday"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_red_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivIconToday"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_food"
+                    android:tint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIconToday"
+                    app:layout_constraintEnd_toEndOf="@id/viewIconToday"
+                    app:layout_constraintStart_toStartOf="@id/viewIconToday"
+                    app:layout_constraintTop_toTopOf="@id/viewIconToday" />
+
+                <TextView
+                    android:id="@+id/tvNomeToday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Almoço no restaurante"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@id/tvValorToday"
+                    app:layout_constraintStart_toEndOf="@id/viewIconToday"
+                    app:layout_constraintTop_toTopOf="@id/viewIconToday" />
+
+                <TextView
+                    android:id="@+id/tvTipoToday"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Alimentação • 11:30"
+                    android:textColor="#808080"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tvNomeToday"
+                    app:layout_constraintStart_toStartOf="@id/tvNomeToday"
+                    app:layout_constraintTop_toBottomOf="@id/tvNomeToday" />
+
+                <TextView
+                    android:id="@+id/tvValorToday"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- R$ 35,90"
+                    android:textColor="#FF4267"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIconToday"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Seção Ontem -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ontem"
+                android:textSize="12sp"
+                android:textColor="#808080"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Item 1 (Ontem) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="8dp">
+
+                <View
+                    android:id="@+id/viewIcon1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_blue_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivIcon1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_shopping"
+                    android:tint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIcon1"
+                    app:layout_constraintEnd_toEndOf="@id/viewIcon1"
+                    app:layout_constraintStart_toStartOf="@id/viewIcon1"
+                    app:layout_constraintTop_toTopOf="@id/viewIcon1" />
+
+                <TextView
+                    android:id="@+id/tvNome1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Compras no mercado"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@id/tvValor1"
+                    app:layout_constraintStart_toEndOf="@id/viewIcon1"
+                    app:layout_constraintTop_toTopOf="@id/viewIcon1" />
+
+                <TextView
+                    android:id="@+id/tvTipo1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Supermercado • 18:30"
+                    android:textColor="#808080"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tvNome1"
+                    app:layout_constraintStart_toStartOf="@id/tvNome1"
+                    app:layout_constraintTop_toBottomOf="@id/tvNome1" />
+
+                <TextView
+                    android:id="@+id/tvValor1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- R$ 120,50"
+                    android:textColor="#FF4267"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIcon1"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Item 2 (Ontem) -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
+
+                <View
+                    android:id="@+id/viewIcon2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rounded_yellow_square"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/ivIcon2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_money"
+                    android:tint="@android:color/white"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIcon2"
+                    app:layout_constraintEnd_toEndOf="@id/viewIcon2"
+                    app:layout_constraintStart_toStartOf="@id/viewIcon2"
+                    app:layout_constraintTop_toTopOf="@id/viewIcon2" />
+
+                <TextView
+                    android:id="@+id/tvNome2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Pagamento de cliente"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toStartOf="@id/tvValor2"
+                    app:layout_constraintStart_toEndOf="@id/viewIcon2"
+                    app:layout_constraintTop_toTopOf="@id/viewIcon2" />
+
+                <TextView
+                    android:id="@+id/tvTipo2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Freelance • 14:00"
+                    android:textColor="#808080"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="@id/tvNome2"
+                    app:layout_constraintStart_toStartOf="@id/tvNome2"
+                    app:layout_constraintTop_toBottomOf="@id/tvNome2" />
+
+                <TextView
+                    android:id="@+id/tvValor2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+ R$ 500,00"
+                    android:textColor="#0890FE"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/viewIcon2"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

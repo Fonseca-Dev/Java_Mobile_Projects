@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="horizontal"
+    android:paddingStart="24dp"
+    android:paddingTop="35dp"
+    android:paddingEnd="16dp"
+    android:paddingBottom="16dp">
+
+    <!-- Foto de perfil circular (estilo Twitter) -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imgProfile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginEnd="40dp"
+        android:contentDescription="Foto do perfil"
+        android:scaleType="centerCrop"
+        android:src="@drawable/placeholder_avatar"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtHeaderName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nome do Usuário"
+            android:textColor="#FF000000"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtHeaderEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="email.usuario@gmail.com"
+            android:textColor="#80000000"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Nome do usuário -->
+
+    <!-- Email do usuário -->
+
+</LinearLayout>

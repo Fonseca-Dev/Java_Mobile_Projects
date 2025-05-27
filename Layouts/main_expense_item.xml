@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/Main_expensesCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginEnd="16dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="#EEEEEE"
+    app:strokeWidth="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/Main_expensesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="RESUMO DE GASTOS"
+            android:textColor="#333333"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/roboto_bold"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Linha Cartão de Crédito -->
+        <LinearLayout
+            android:id="@+id/Main_creditExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <View
+                android:id="@+id/Main_creditIndicator"
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:background="#7E57C2"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/Main_creditTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Despesas cartão de crédito"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <TextView
+                android:id="@+id/Main_creditValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 1.245,90"
+                android:textColor="#7E57C2"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"/>
+        </LinearLayout>
+
+        <!-- Linha Débito/Pix -->
+        <LinearLayout
+            android:id="@+id/Main_debitExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="8dp">
+
+            <View
+                android:id="@+id/Main_debitIndicator"
+                android:layout_width="4dp"
+                android:layout_height="16dp"
+                android:background="#FFA726"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/Main_debitTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Despesas no Débito/Pix"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <TextView
+                android:id="@+id/Main_debitValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 856,30"
+                android:textColor="#FFA726"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"/>
+        </LinearLayout>
+
+        <!-- Divider -->
+        <View
+            android:id="@+id/Main_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#EEEEEE"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"/>
+
+        <!-- Gasto Hoje -->
+        <LinearLayout
+            android:id="@+id/Main_dailyExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/Main_dailyLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Gasto hoje:"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                android:fontFamily="@font/roboto_regular"/>
+
+            <TextView
+                android:id="@+id/Main_dailyValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 342,50"
+                android:textColor="#8D6E63"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/roboto_bold"/>
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

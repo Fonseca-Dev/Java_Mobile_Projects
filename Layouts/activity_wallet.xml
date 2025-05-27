@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/branco_cinzentado">
+
+    <!-- AppBar corrigida com padding para status bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="10dp"
+        android:elevation="4dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_arrow_back"
+                android:tint="@color/black"
+                android:contentDescription="Voltar" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Minha Carteira"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <!-- Conteúdo rolável -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Card Saldo Atual (sem elevation) -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/white">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Saldo Atual"
+                        android:textColor="#808080"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:id="@+id/Wallet_TextView_Saldo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="R$ 3.245,90"
+                        android:textColor="@color/black"
+                        android:textSize="28sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Receitas"
+                                android:textColor="#808080"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:id="@+id/Wallet_TextView_Receitas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text=""
+                                android:textColor="#0890FE"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Despesas"
+                                android:textColor="#808080"
+                                android:textSize="12sp"/>
+
+                            <TextView
+                                android:id="@+id/Wallet_TextView_Despesas"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text=""
+                                android:textColor="#FF4267"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Gráfico de Gastos -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gastos por Categoria"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Placeholder para o gráfico -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="#F5F5F5"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_placeholder_chart"
+                android:layout_marginBottom="24dp"/>
+
+            <!-- Lista de Categorias -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Detalhes por Categoria"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Categoria 1 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp">
+
+                <View
+                    android:id="@+id/viewColor1"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#FF4267"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCategory1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Alimentação"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvAmount1"
+                    app:layout_constraintStart_toEndOf="@id/viewColor1"
+                    app:layout_constraintTop_toTopOf="@id/viewColor1" />
+
+                <TextView
+                    android:id="@+id/tvPercentage1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="35%"
+                    android:textColor="#808080"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvCategory1"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategory1" />
+
+                <TextView
+                    android:id="@+id/tvAmount1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- R$ 684,50"
+                    android:textColor="#FF4267"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCategory1"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progress1"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="12dp"
+                    android:progress="35"
+                    android:progressDrawable="@drawable/progress_red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPercentage1" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Categoria 2 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp">
+
+                <View
+                    android:id="@+id/viewColor2"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#FFAF2A"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCategory2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Transporte"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvAmount2"
+                    app:layout_constraintStart_toEndOf="@id/viewColor2"
+                    app:layout_constraintTop_toTopOf="@id/viewColor2" />
+
+                <TextView
+                    android:id="@+id/tvPercentage2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="25%"
+                    android:textColor="#808080"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvCategory2"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategory2" />
+
+                <TextView
+                    android:id="@+id/tvAmount2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- R$ 489,00"
+                    android:textColor="#FFAF2A"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCategory2"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progress2"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="12dp"
+                    android:progress="25"
+                    android:progressDrawable="@drawable/progress_orange"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPercentage2" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Categoria 3 -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp">
+
+                <View
+                    android:id="@+id/viewColor3"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginTop="4dp"
+                    android:background="#0890FE"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCategory3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Lazer"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@id/tvAmount3"
+                    app:layout_constraintStart_toEndOf="@id/viewColor3"
+                    app:layout_constraintTop_toTopOf="@id/viewColor3" />
+
+                <TextView
+                    android:id="@+id/tvPercentage3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="20%"
+                    android:textColor="#808080"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@id/tvCategory3"
+                    app:layout_constraintTop_toBottomOf="@id/tvCategory3" />
+
+                <TextView
+                    android:id="@+id/tvAmount3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="- R$ 391,20"
+                    android:textColor="#0890FE"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvCategory3"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+                <ProgressBar
+                    android:id="@+id/progress3"
+                    style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="12dp"
+                    android:progress="20"
+                    android:progressDrawable="@drawable/progress_blue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPercentage3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Botão Ver Relatório Completo -->
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:text="Ver Relatório Completo"
+                android:textColor="@color/white"
+                app:backgroundTint="#0890FE"
+                app:cornerRadius="8dp"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

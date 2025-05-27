@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Main_foodCard"
+    android:layout_width="match_parent"
+    android:layout_height="290dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:strokeWidth="0dp">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Título com ícone -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/Main_foodIcon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_food" />
+
+                <TextView
+                    android:id="@+id/Main_foodTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cartão "
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/roboto_regular"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="alimentação"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/roboto_bold"/>
+            </LinearLayout>
+
+            <!-- Card cinza interno -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="6dp"
+                app:cardBackgroundColor="@color/cinza_claro"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Linha superior (Logo + Valor) -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp">
+
+                        <!-- Logo e Nome do Cartão -->
+                        <LinearLayout
+                            android:id="@+id/Main_cardInfoContainer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_alignParentStart="true">
+
+                            <ImageView
+                                android:id="@+id/Main_cardLogo"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:src="@drawable/ic_alelo"
+                                android:layout_marginBottom="4dp"/>
+
+                            <TextView
+                                android:id="@+id/Main_cardName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Alelo"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_bold"/>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <ImageView
+                                    android:id="@+id/Main_cardCalendarIcon"
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:src="@drawable/ic_calendar"
+                                    android:layout_marginEnd="4dp"
+                                    android:tint="@color/black"
+                                    tools:ignore="UseAppTint" />
+
+                                <TextView
+                                    android:id="@+id/Main_cardPaymentDay"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Renovação dia 01 de março"
+                                    android:textColor="@color/black"
+                                    android:textSize="12sp"
+                                    android:fontFamily="@font/roboto_regular"/>
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <!-- Valor do Cartão -->
+                        <TextView
+                            android:id="@+id/Main_cardBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:text="R$ 498,76"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/roboto_bold"/>
+                    </RelativeLayout>
+
+                    <!-- Botão Visualizar Mais -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/Main_viewMoreButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/btn_white_bg"
+                        android:text="Visualizar mais"
+                        android:textColor="#FF000000"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        app:backgroundTint="@null"
+                        style="@style/Widget.AppCompat.Button.Borderless" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
+
+        <!-- Ícone de + verde no canto superior direito -->
+        <ImageView
+            android:id="@+id/Main_addFoodIcon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:layout_margin="16dp"
+            android:src="@drawable/ic_plus_green"
+            android:tint="#0B9055"
+            android:layout_gravity="top|end"
+            android:contentDescription="Adicionar"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            tools:ignore="UseAppTint" />
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>

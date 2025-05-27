@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Main_drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="UseAppTint,HardcodedText">
+
+    <!-- Conteúdo principal -->
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Layout vertical principal -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!-- AppBar Superior -->
+                <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/Main_topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/white"
+                android:elevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingEnd="16dp">
+
+                    <ImageView
+                        android:id="@+id/Main_profileIcon"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginStart="1dp"
+                        android:src="@drawable/placeholder_avatar" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/Main_greetingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Boa noite,"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:fontFamily="@font/roboto_regular" />
+
+                        <TextView
+                            android:id="@+id/Main_userName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fulano"
+                            android:textColor="@color/black"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+
+                    <ImageButton
+                        android:id="@+id/Main_btnNotification"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="5dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_notification" />
+                </LinearLayout>
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <!-- ScrollView principal -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true"
+                android:paddingBottom="72dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:background="@color/branco_cinzentado"
+                    android:layout_height="wrap_content"
+
+                    android:paddingBottom="16dp">
+
+                    <!-- Seletor de Mês -->
+                    <LinearLayout
+                        android:id="@+id/Main_monthSelector"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="6dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/Main_month_summary_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Resumo de "
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:fontFamily="@font/roboto_regular" />
+
+                        <TextView
+                            android:id="@+id/Main_monthText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Abril"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/roboto_bold" />
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/Main_monthArrow"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/ic_arrow_drop_down" />
+                    </LinearLayout>
+
+                    <!-- Card do Cartão de Crédito -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/Main_bankAccountCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="193dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp"
+                        app:cardBackgroundColor="@android:color/transparent"
+                        app:cardCornerRadius="16dp"
+                        app:strokeWidth="0dp"
+                        app:strokeColor="@android:color/transparent"
+                        app:layout_constraintTop_toBottomOf="@id/Main_monthSelector">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@drawable/card_background">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:padding="20dp">
+
+                                <ImageView
+                                    android:id="@+id/Main_cardFlag"
+                                    android:layout_width="40dp"
+                                    android:layout_height="28dp"
+                                    android:layout_marginEnd="1dp"
+                                    android:layout_marginTop="1dp"
+                                    android:src="@drawable/ic_flag"
+                                    android:tint="@color/white"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"/>
+
+                                <TextView
+                                    android:id="@+id/Main_accountName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="1dp"
+                                    android:layout_marginTop="1dp"
+                                    android:text="Saldo Atual"
+                                    android:textColor="@color/white"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintHorizontal_bias="0.478"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.495">
+
+                                    <TextView
+                                        android:id="@+id/Main_accountBalance"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/roboto_bold"
+                                        android:text="R$ 5.432,10"
+                                        android:textColor="@color/white"
+                                        android:textSize="28sp"
+                                        android:textStyle="bold" />
+
+                                    <com.google.android.material.imageview.ShapeableImageView
+                                        android:id="@+id/Main_toggleBalanceVisibility"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginStart="140dp"
+                                        android:src="@drawable/ic_visibility"
+                                        android:tint="@color/white" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/Main_accountHolderContainer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="1dp"
+                                    android:layout_marginBottom="1dp"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/Main_accountHolderLabel"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Nome do Titular:"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:fontFamily="@font/roboto_regular" />
+
+                                    <TextView
+                                        android:id="@+id/Main_accountHolderName"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="Nome de Usuario"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/roboto_bold" />
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:id="@+id/Main_lastUpdateContainer"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="1dp"
+                                    android:layout_marginEnd="1dp"
+                                    android:orientation="horizontal"
+                                    app:layout_constraintBottom_toBottomOf="parent"
+                                    app:layout_constraintEnd_toEndOf="parent">
+
+                                    <TextView
+                                        android:id="@+id/Main_lastUpdateDate"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="4dp"
+                                        android:text="03/04"
+                                        android:textColor="@color/white"
+                                        android:textSize="12sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/roboto_bold" />
+                                </LinearLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Grade de Cards -->
+                    <include
+                        android:id="@+id/Main_grid"
+                        layout="@layout/main_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/Main_bankAccountCard"/>
+
+                    <!-- Card de Despesas (Abaixo da Grade) -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/Main_expensesCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/Main_grid"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:cardCornerRadius="8dp"
+                        app:strokeColor="#EEEEEE"
+                        app:strokeWidth="1dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/Main_expensesTitle"
+                                android:layout_width="wrap_content"
+                                android:layout_marginEnd="210dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="end"
+                                android:text="RESUMO DE GASTOS"
+                                android:textColor="#333333"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:fontFamily="@font/roboto_bold"
+                                android:layout_marginBottom="12dp"/>
+
+                            <!-- Linha Cartão de Crédito -->
+                            <LinearLayout
+                                android:id="@+id/Main_creditExpense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+
+                                <View
+                                    android:id="@+id/Main_creditIndicator"
+                                    android:layout_width="4dp"
+                                    android:layout_height="16dp"
+                                    android:background="#7E57C2"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:id="@+id/Main_creditTitle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Despesas cartão de crédito"
+                                    android:textColor="#333333"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/roboto_regular"/>
+
+                                <TextView
+                                    android:id="@+id/Main_creditValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 1.245,90"
+                                    android:textColor="#7E57C2"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_bold"/>
+                            </LinearLayout>
+
+                            <!-- Linha Débito/Pix -->
+                            <LinearLayout
+                                android:id="@+id/Main_debitExpense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:layout_marginBottom="8dp">
+
+                                <View
+                                    android:id="@+id/Main_debitIndicator"
+                                    android:layout_width="4dp"
+                                    android:layout_height="16dp"
+                                    android:background="#FFA726"
+                                    android:layout_marginEnd="8dp"/>
+
+                                <TextView
+                                    android:id="@+id/Main_debitTitle"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Despesas no Débito/Pix"
+                                    android:textColor="#333333"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/roboto_regular"/>
+
+                                <TextView
+                                    android:id="@+id/Main_debitValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 856,30"
+                                    android:textColor="#FFA726"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_bold"/>
+                            </LinearLayout>
+
+                            <!-- Divider -->
+                            <View
+                                android:id="@+id/Main_divider"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="#EEEEEE"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginBottom="8dp"/>
+
+                            <!-- Gasto Hoje -->
+                            <LinearLayout
+                                android:id="@+id/Main_dailyExpense"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical">
+
+                                <TextView
+                                    android:id="@+id/Main_dailyLabel"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Gasto hoje:"
+                                    android:textColor="#333333"
+                                    android:textSize="14sp"
+                                    android:fontFamily="@font/roboto_regular"/>
+
+                                <TextView
+                                    android:id="@+id/Main_dailyValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="R$ 342,50"
+                                    android:textColor="#8D6E63"
+                                    android:textSize="14sp"
+                                    android:textStyle="bold"
+                                    android:fontFamily="@font/roboto_bold"/>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Card de Feedback -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/Main_feedbackCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/Main_expensesCard"
+                        app:cardCornerRadius="8dp"
+                        app:strokeColor="@color/blue_500"
+                        app:strokeWidth="1dp"
+                        app:cardBackgroundColor="@android:color/white">
+
+                        <LinearLayout
+                            android:id="@+id/Main_feedbackContainer"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+
+                            <TextView
+                                android:id="@+id/Main_feedbackTitle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="8dp"
+                                android:fontFamily="@font/roboto_bold"
+                                android:text="Feedback"
+                                android:textColor="@color/blue_500"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/Main_feedbackDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/roboto_regular"
+                                android:lineSpacingExtra="4dp"
+                                android:text="No último mês, você gastou R$ 400 no *Ponto do Sabor*. Vale a pena repensar esse hábito! Levar comida de casa ou escolher opções mais baratas pode ajudar a economizar sem abrir mão de uma boa refeição. 💰🍽️"
+                                android:textColor="#99000000"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <!-- Card de Alimentação -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/Main_foodCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintTop_toBottomOf="@id/Main_feedbackCard"
+                        app:cardCornerRadius="8dp"
+                        app:cardBackgroundColor="@android:color/white"
+                        app:strokeWidth="0dp">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal"
+                                    android:gravity="center_vertical"
+                                    android:layout_marginBottom="12dp">
+
+                                    <ImageView
+                                        android:id="@+id/Main_foodIcon"
+                                        android:layout_width="24dp"
+                                        android:layout_height="24dp"
+                                        android:layout_marginEnd="8dp"
+                                        android:src="@drawable/ic_food" />
+
+                                    <TextView
+                                        android:id="@+id/Main_foodTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Cartão "
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp"
+                                        android:fontFamily="@font/roboto_regular"/>
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="alimentação"
+                                        android:textColor="@color/black"
+                                        android:textSize="14sp"
+                                        android:textStyle="bold"
+                                        android:fontFamily="@font/roboto_bold"/>
+                                </LinearLayout>
+
+                                <com.google.android.material.card.MaterialCardView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    app:cardCornerRadius="6dp"
+                                    app:cardBackgroundColor="@color/cinza_claro"
+                                    app:strokeWidth="0dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical"
+                                        android:padding="16dp">
+
+                                        <RelativeLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="12dp">
+
+                                            <LinearLayout
+                                                android:id="@+id/Main_cardInfoContainer"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="vertical"
+                                                android:layout_alignParentStart="true">
+
+                                                <ImageView
+                                                    android:id="@+id/Main_cardLogo"
+                                                    android:layout_width="40dp"
+                                                    android:layout_height="40dp"
+                                                    android:src="@drawable/ic_alelo"
+                                                    android:layout_marginBottom="4dp"/>
+
+                                                <TextView
+                                                    android:id="@+id/Main_cardName"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:text="Alelo"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="14sp"
+                                                    android:textStyle="bold"
+                                                    android:fontFamily="@font/roboto_bold"/>
+
+                                                <LinearLayout
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal"
+                                                    android:gravity="center_vertical">
+
+                                                    <ImageView
+                                                        android:id="@+id/Main_cardCalendarIcon"
+                                                        android:layout_width="16dp"
+                                                        android:layout_height="16dp"
+                                                        android:src="@drawable/ic_calendar"
+                                                        android:layout_marginEnd="4dp"
+                                                        android:tint="@color/black"/>
+
+                                                    <TextView
+                                                        android:id="@+id/Main_cardPaymentDay"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="Renovação dia 01 de março"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="12sp"
+                                                        android:fontFamily="@font/roboto_regular"/>
+                                                </LinearLayout>
+                                            </LinearLayout>
+
+                                            <TextView
+                                                android:id="@+id/Main_cardBalance"
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_alignParentEnd="true"
+                                                android:layout_centerVertical="true"
+                                                android:text="R$ 498,76"
+                                                android:textColor="@color/black"
+                                                android:textSize="16sp"
+                                                android:fontFamily="@font/roboto_bold"/>
+                                        </RelativeLayout>
+
+                                        <com.google.android.material.button.MaterialButton
+                                            android:id="@+id/Main_viewMoreButton"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="48dp"
+                                            android:layout_marginTop="8dp"
+                                            android:background="@drawable/btn_white_bg"
+                                            android:text="Visualizar mais"
+                                            android:textColor="#FF000000"
+                                            android:textSize="14sp"
+                                            android:fontFamily="@font/roboto_medium"
+                                            android:gravity="center"
+                                            android:padding="12dp"
+                                            app:backgroundTint="@null"
+                                            style="@style/Widget.AppCompat.Button.Borderless" />
+                                    </LinearLayout>
+                                </com.google.android.material.card.MaterialCardView>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/Main_addFoodIcon"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_margin="16dp"
+                                android:src="@drawable/ic_plus_green"
+                                android:tint="#0B9055"
+                                android:layout_gravity="top|end"
+                                android:contentDescription="Adicionar"
+                                android:background="?attr/selectableItemBackgroundBorderless"/>
+                        </FrameLayout>
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
+        </LinearLayout>
+
+        <!-- BottomNavigationView SEPARADO -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/Main_bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@android:color/white"
+            app:itemIconSize="24dp"
+            app:itemIconTint="@drawable/bottom_nav_colors"
+            app:itemTextColor="@drawable/bottom_nav_colors"
+            app:labelVisibilityMode="unlabeled"
+            app:menu="@menu/bottom_nav_menu" />
+
+        <!-- BottomAppBar -->
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/Main_bottom_app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@color/white"
+            app:elevation="0dp"
+            app:fabAlignmentMode="center" />
+
+        <!-- FAB Centrazzl -->
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/Main_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="32dp"
+            android:contentDescription="add"
+            app:layout_anchor="@id/Main_bottom_app_bar"
+            app:layout_anchorGravity="center"
+            app:backgroundTint="@color/blue_500"
+            app:elevation="10dp"
+            app:shapeAppearance="@style/FabSquareShape"
+            app:srcCompat="@drawable/ic_plus_green"
+            app:tint="@color/white"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <!-- NavigationView do Drawer -->
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/Main_nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        style="@style/WhiteNavigationView"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

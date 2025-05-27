@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="8dp"
+    tools:ignore="UseAppTint">
+
+    <!-- Primeira linha (2 cards) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- Card 1 (Verde) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Container do ícone (cor clara) -->
+                <LinearLayout
+                    android:id="@+id/button_icon_container1"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@color/green_container"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize4dp">
+
+                    <ImageView
+                        android:id="@+id/button_icon1"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_money"
+                        android:tint="@color/green_icon"/>
+                </LinearLayout>
+
+                <!-- Textos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/button_label1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Saldo"
+                        android:textColor="#99000000"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:id="@+id/button_value1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="R$ 5.432,10"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 2 (Vermelho) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Container do ícone (cor clara) -->
+                <LinearLayout
+                    android:id="@+id/button_icon_container2"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@color/red_container"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize4dp">
+
+                    <ImageView
+                        android:id="@+id/button_icon2"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_money"
+                        android:tint="@color/red_icon"/>
+                </LinearLayout>
+
+                <!-- Textos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/button_label2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gastos"
+                        android:textColor="#99000000"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:id="@+id/button_value2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="R$ 1.245,90"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+    <!-- Segunda linha (2 cards) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <!-- Card 3 (Azul) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Container do ícone (cor clara) -->
+                <LinearLayout
+                    android:id="@+id/button_icon_container3"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@color/blue_container"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize4dp"
+                    android:backgroundTint="@color/blue_container">
+
+                    <ImageView
+                        android:id="@+id/button_icon3"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_economias"
+                        android:tint="@color/blue_icon"/>
+                </LinearLayout>
+
+                <!-- Textos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/button_label3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Investimentos"
+                        android:textColor="#99000000"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:id="@+id/button_value3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="R$ 8.765,43"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Card 4 (Amarelo) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="0dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:focusable="true">
+
+                <!-- Container do ícone (cor clara) -->
+                <LinearLayout
+                    android:id="@+id/button_icon_container4"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:gravity="center"
+                    android:background="@color/yellow_container"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize4dp">
+
+                    <ImageView
+                        android:id="@+id/button_icon4"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_pagos"
+                        android:tint="@color/yellow_icon"/>
+                </LinearLayout>
+
+                <!-- Textos -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/button_label4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Metas"
+                        android:textColor="#99000000"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/roboto_medium"/>
+
+                    <TextView
+                        android:id="@+id/button_value4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="R$ 3.210,00"
+                        android:textColor="@android:color/black"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/roboto_bold"/>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</LinearLayout>
