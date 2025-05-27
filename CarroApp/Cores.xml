@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cores">
+        <item>Branco</item>
+        <item>Preto</item>
+        <item>Vinho</item>
+        <item>Amarelo</item>
+        <item>Outros</item>
+    </string-array>
+</resources>
