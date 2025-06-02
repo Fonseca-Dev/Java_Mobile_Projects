@@ -26,16 +26,6 @@ Um aplicativo Android desenvolvido com Java que se comunica com um servidor REST
 
 ---
 
-## 🎥 Demonstração (adicione seus prints ou GIFs)
-
-> Exemplo de prints que você pode inserir:
-- Tela inicial com nome e RA do aluno
-- Tela de listagem de mesas
-- Tela de abertura da mesa
-- Tela de encerramento da mesa
-
----
-
 ## 🔧 Como rodar o projeto
 
 ### ✅ Pré-requisitos
