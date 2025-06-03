@@ -98,7 +98,7 @@ Retorna a lista de produtos disponíveis com nome e preço.
 
 1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/Fonseca-Dev/RestauranteAPP/APPRestauranteServer.git
+   git clone https://github.com/Fonseca-Dev/RestauranteAPP/APPRestauranteServer
    cd APPRestaurante-Server
    ```
 
