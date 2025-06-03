@@ -1,128 +1,88 @@
 
-# 📺 Sistema de Gerenciamento de Séries
+# 📱 Aplicativo Android - Gerenciador de Séries
 
-Este é um aplicativo de console desenvolvido em **Java** para gerenciar suas séries favoritas!  
-Você pode **listar**, **incluir**, **atualizar** e **excluir** informações de séries, como título, temporada, avaliação e gênero.
+Este é um aplicativo Android desenvolvido em Java com o Android Studio. O objetivo é permitir que o usuário cadastre e valide informações sobre suas séries favoritas.
 
 ---
 
-## 🚀 Funcionalidades
+## 🎯 Funcionalidades
 
-- 📄 **Listar Séries**: Exibe todas as séries cadastradas.
-- ➕ **Incluir Série**: Permite adicionar uma nova série com os seguintes dados:
+- 📝 Entrada de dados para uma série:
   - Título
   - Temporada
-  - Avaliação
+  - Avaliação (0 a 10)
   - Gênero
-- 🔁 **Atualizar Série**: Permite atualizar os dados de uma série existente, identificada pelo título.
-- ❌ **Excluir Série**: Remove uma série da lista, também pelo título.
-- 🚪 **Sair do Sistema**: Encerra a aplicação.
+  - Finalizada (Sim/Não)
+- ✅ Validação de dados com mensagens de erro informativas
+- 📢 Exibição de informações validadas por meio de mensagens `Toast`
+- 👤 Exibição do nome e RA do desenvolvedor
 
 ---
 
-## 💻 Como Usar
+## 🧱 Estrutura do Projeto
 
-1. Compile os arquivos:
+### 🔹 `MainActivity.java`
+Contém a lógica principal de interação com o usuário, incluindo:
 
-```bash
-javac Serie.java MenuSerie.java
-```
+- Leitura dos dados inseridos nos campos de texto
+- Validação dos campos com mensagens claras de erro
+- Exibição dos dados validados via `Toast`
+- Exibição de identificação pessoal (RA e nome)
 
-2. Execute o programa:
-
-```bash
-java MenuSerie
-```
-
-3. Use o menu interativo no terminal para gerenciar suas séries favoritas!
-
----
-
-## 🧱 Estrutura do Código
-
-### 📂 `Serie.java`
-
-Classe que representa uma série com os seguintes atributos:
+### 🔹 `Serie.java`
+Classe simples que representa uma série com os seguintes atributos:
 
 ```java
-private String titulo;
-private int temporada;
-private double avaliacao;
-private String genero;
-```
-
-Todos os campos possuem seus respectivos **getters**.  
-O construtor é usado para instanciar novos objetos do tipo `Serie`.
-
----
-
-### 📂 `MenuSerie.java`
-
-Contém o menu principal e as funções para:
-
-- 📋 Listar (`listar`)
-- ✍️ Incluir (`incluir`)
-- 🔁 Atualizar (`atualizar`)
-- 🗑️ Excluir (`excluir`)
-
-Utiliza um `ArrayList<Serie>` para armazenar dinamicamente os dados durante a execução.
-
----
-
-## 🎮 Exemplo de Uso
-
-```text
-Sistema de Séries
-1 - Listar
-2 - Incluir
-3 - Atualizar
-4 - Excluir
-5 - Sair
-```
-
-### Exemplo de Inclusão:
-```text
-Incluir uma nova série
-Título
-Breaking Bad
-Temporada:
-5
-Avaliação:
-9.5
-Genero:
-Drama/Crime
+String titulo;
+int temporada;
+double avaliacao;
+String genero;
+String finalizada;
 ```
 
 ---
 
-## 🛠️ Requisitos
+## 🧪 Regras de Validação
 
-- Java JDK 8 ou superior
-- Terminal/Console para execução
+- **Título**: Não pode ser vazio
+- **Temporada**: Deve ser maior que 0
+- **Avaliação**: Valor entre 0 e 10
+- **Gênero**: Não pode ser vazio
+- **Finalizada**: Aceita apenas "Sim", "Não", "S", "N" ou "Nao"
 
----
-
-## 📌 Observações
-
-- Os dados **não são persistidos** ao encerrar o programa.
-- O título da série é utilizado como identificador único para atualização e exclusão.
-- Este projeto pode ser facilmente adaptado para um sistema com **interface gráfica** ou com **banco de dados**.
+Mensagens `Toast` são usadas para informar o usuário sobre falhas ou sucesso na validação.
 
 ---
 
-## ✨ Melhorias Futuras
+## 🧰 Requisitos Técnicos
 
-- 📁 Salvamento dos dados em arquivo ou banco de dados.
-- 🖼️ Interface gráfica com JavaFX ou Swing.
-- 🔍 Busca de séries por gênero ou avaliação.
-- ✅ Validações de entrada (ex: evitar avaliações negativas).
+- Android Studio (recomendado: versão mais recente)
+- SDK mínimo compatível com API usada no projeto (ex: API 21 ou superior)
+- Dispositivo ou emulador Android
+
+---
+
+## 📲 Como Usar
+
+1. Clone o repositório ou importe o projeto no Android Studio
+2. Conecte um dispositivo Android ou inicie um emulador
+3. Compile e execute o app
+4. Preencha os campos da interface e clique nos botões para exibir/validar os dados
 
 ---
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [**Kauê Rocha da Fonseca**]  
-Curso de Ciência da Computação – UNIEDUK  
-Projeto de prática com Java – Controle de Séries no Console.
+Desenvolvido por **Kauê Rocha da Fonseca**  
+Curso de Ciência da Computação – UNIEDUK
+
+---
+
+## ✨ Melhorias Futuras
+
+- 💾 Persistência de dados com SQLite ou Room
+- 🎨 Melhorias na interface com Material Design
+- ☁️ Integração com API para buscar séries reais
+- 🔄 Lista de séries com histórico e edição
 
 ---
