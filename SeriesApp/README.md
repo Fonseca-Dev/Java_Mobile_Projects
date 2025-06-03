@@ -121,7 +121,7 @@ Drama/Crime
 
 ## 👨‍💻 Autor
 
-Desenvolvido por [**Seu Nome Aqui**]  
+Desenvolvido por [**Kauê Rocha da Fonseca**]  
 Curso de Ciência da Computação – UNIEDUK  
 Projeto de prática com Java – Controle de Séries no Console.
 
