@@ -1,4 +1,4 @@
-# 🍽️ Aula7RestauranteApp
+# 🍽️ RestauranteApp
 
 Um aplicativo Android desenvolvido em **Java** que se comunica com um servidor RESTful para **controle completo das mesas de um restaurante**. Ideal para fins acadêmicos, este projeto simula um sistema prático de atendimento, permitindo consultar, abrir, anotar pedidos e fechar mesas com sincronização em tempo real.
 
