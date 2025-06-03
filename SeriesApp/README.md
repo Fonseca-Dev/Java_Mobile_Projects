@@ -1,88 +1,59 @@
+# 📺 SérieApp (Android)
 
-# 📱 Aplicativo Android - Gerenciador de Séries
-
-Este é um aplicativo Android desenvolvido em Java com o Android Studio. O objetivo é permitir que o usuário cadastre e valide informações sobre suas séries favoritas.
-
----
+Este é um aplicativo Android simples desenvolvido em Java que permite ao usuário cadastrar, validar e visualizar informações sobre uma série.
 
 ## 🎯 Funcionalidades
 
-- 📝 Entrada de dados para uma série:
-  - Título
-  - Temporada
-  - Avaliação (0 a 10)
-  - Gênero
-  - Finalizada (Sim/Não)
-- ✅ Validação de dados com mensagens de erro informativas
-- 📢 Exibição de informações validadas por meio de mensagens `Toast`
-- 👤 Exibição do nome e RA do desenvolvedor
+- Inserção dos dados de uma série (título, temporada, avaliação, gênero e se foi finalizada).
+- Validação completa dos campos com mensagens de erro personalizadas.
+- Exibição dos dados validados por meio de `Toast`.
+- Interface gráfica com `ConstraintLayout`.
 
----
+## 🧩 Layout da Interface (XML)
 
-## 🧱 Estrutura do Projeto
+A interface foi construída utilizando o `ConstraintLayout` e conta com os seguintes componentes:
 
-### 🔹 `MainActivity.java`
-Contém a lógica principal de interação com o usuário, incluindo:
+| Componente | ID | Descrição |
+|-----------|----|-----------|
+| `TextView` | `Main_TextView_Titulo_Activity` | Título da activity |
+| `EditText` | `Main_EditText_Titulo` | Campo para inserir o título da série |
+| `EditText` | `Main_EditText_Temporada` | Campo para inserir a temporada |
+| `EditText` | `Main_EditText_Avaliacao` | Campo para inserir a avaliação (0-10) |
+| `EditText` | `Main_EditText_Genero` | Campo para inserir o gênero da série |
+| `EditText` | `Main_EditText_Finalizada` | Campo para informar se a série foi finalizada ("Sim" ou "Não") |
+| `Button` | `button` | Botão "Exibir" RA e nome |
+| `Button` | `button2` | Botão "Validar" os dados inseridos |
 
-- Leitura dos dados inseridos nos campos de texto
-- Validação dos campos com mensagens claras de erro
-- Exibição dos dados validados via `Toast`
-- Exibição de identificação pessoal (RA e nome)
+## 📱 Lógica da Aplicação
 
-### 🔹 `Serie.java`
-Classe simples que representa uma série com os seguintes atributos:
+### Classe `MainActivity`
+
+- `exibir(View v)`: Exibe o nome e RA do autor com um `Toast`.
+- `validar(View v)`: Faz validações rigorosas nos dados inseridos, como:
+  - Título não pode ser vazio
+  - Temporada deve ser maior que 0
+  - Avaliação entre 0 e 10
+  - Gênero e finalização obrigatórios
+  - Campo finalizada aceita "Sim", "Não", "S", "N", "Nao"
+
+- `obterSerie()`: Extrai dados da tela e cria uma instância da classe `Serie`.
+
+### Classe `Serie`
 
 ```java
-String titulo;
-int temporada;
-double avaliacao;
-String genero;
-String finalizada;
+public class Serie {
+    String titulo;
+    int temporada;
+    double avaliacao;
+    String genero;
+    String finalizada;
+}
 ```
 
----
+## 🙋‍♂️ Autor
 
-## 🧪 Regras de Validação
-
-- **Título**: Não pode ser vazio
-- **Temporada**: Deve ser maior que 0
-- **Avaliação**: Valor entre 0 e 10
-- **Gênero**: Não pode ser vazio
-- **Finalizada**: Aceita apenas "Sim", "Não", "S", "N" ou "Nao"
-
-Mensagens `Toast` são usadas para informar o usuário sobre falhas ou sucesso na validação.
+**Kauê Rocha da Fonseca**  
 
 ---
 
-## 🧰 Requisitos Técnicos
-
-- Android Studio (recomendado: versão mais recente)
-- SDK mínimo compatível com API usada no projeto (ex: API 21 ou superior)
-- Dispositivo ou emulador Android
-
----
-
-## 📲 Como Usar
-
-1. Clone o repositório ou importe o projeto no Android Studio
-2. Conecte um dispositivo Android ou inicie um emulador
-3. Compile e execute o app
-4. Preencha os campos da interface e clique nos botões para exibir/validar os dados
-
----
-
-## 👨‍💻 Autor
-
-Desenvolvido por **Kauê Rocha da Fonseca**  
-Curso de Ciência da Computação – UNIEDUK
-
----
-
-## ✨ Melhorias Futuras
-
-- 💾 Persistência de dados com SQLite ou Room
-- 🎨 Melhorias na interface com Material Design
-- ☁️ Integração com API para buscar séries reais
-- 🔄 Lista de séries com histórico e edição
-
----
+Este projeto foi desenvolvido como parte dos estudos em Android Studio utilizando Java e layouts com XML.
