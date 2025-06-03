@@ -94,26 +94,6 @@ Retorna a lista de produtos disponíveis com nome e preço.
 
 ---
 
-## ▶️ Como Rodar o Projeto
-
-1. **Clone este repositório:**
-   ```bash
-   git clone https://github.com/Fonseca-Dev/RestauranteAPP/APPRestauranteServer
-   cd APPRestaurante-Server
-   ```
-
-2. **Compile e execute com o Maven:**
-   ```bash
-   ./mvnw spring-boot:run
-   ```
-
-3. **A aplicação estará disponível em:**
-   ```
-   http://localhost:8080
-   ```
-
----
-
 ## 📫 Contato
 
 - **Nome:** Kauê Rocha da Fonseca  
