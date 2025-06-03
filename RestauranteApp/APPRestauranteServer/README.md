@@ -62,8 +62,8 @@ Cadastra uma nova mesa.
 **Exemplo de requisição:**
 ```json
 {
-  "status": "Ocupada",
-  "cliente": "João",
+  "status": "Livre",
+  "cliente": "",
   "pedidos": [],
   "valorConta": 0.0
 }
@@ -75,8 +75,8 @@ Atualiza os dados de uma mesa existente.
 **Exemplo de requisição:**
 ```json
 {
-  "status": "Livre",
-  "cliente": "",
+  "status": "Ocupada",
+  "cliente": "João",
   "pedidos": [],
   "valorConta": 0.0
 }
