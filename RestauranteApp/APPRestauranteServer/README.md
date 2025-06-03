@@ -3,7 +3,7 @@
 
 Servidor RESTful desenvolvido em **Java com Spring Boot** para gerenciar o sistema de mesas de um restaurante. Permite cadastrar, consultar, atualizar e remover mesas, além de listar os produtos disponíveis para pedidos.
 
-> Projeto desenvolvido por **Kauê Rocha da Fonseca - RA: 12427172**
+> Projeto desenvolvido por **Kauê Rocha da Fonseca**
 
 ---
 
@@ -98,7 +98,7 @@ Retorna a lista de produtos disponíveis com nome e preço.
 
 1. **Clone este repositório:**
    ```bash
-   git clone https://github.com/seuusuario/APPRestaurante-Server.git
+   git clone https://github.com/Fonseca-Dev/RestauranteAPP/APPRestauranteServer.git
    cd APPRestaurante-Server
    ```
 
@@ -117,12 +117,7 @@ Retorna a lista de produtos disponíveis com nome e preço.
 ## 📫 Contato
 
 - **Nome:** Kauê Rocha da Fonseca  
-- **RA:** 12427172  
-- *(Adicione seu e-mail ou LinkedIn, se quiser)*
+- **E-mail:** fonseca.kaue@outlook.com
 
 ---
-
-## 📝 Licença
-
-Este projeto está licenciado sob a Licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
 
